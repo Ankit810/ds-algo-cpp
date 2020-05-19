@@ -3,8 +3,8 @@ using namespace std;
 
 class BST
 {
-public:
     int data;
+public:
     BST *left, *right;
     void insert(BST *, int);
     void preorder(BST *);
@@ -123,7 +123,7 @@ int main()
     BST b;
     while (1)
     {
-        cout << "\n1. Insert\n2. Display (preorder) \n3. Delete\n";
+        cout << "\n1. Insert\n2. Display (preorder) \n3. Delete\n4. Exit\n";
         cin >> ch;
 
         switch (ch)
