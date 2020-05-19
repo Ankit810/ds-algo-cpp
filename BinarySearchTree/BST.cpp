@@ -16,6 +16,13 @@ public:
         left = NULL;
         right = NULL;
     }
+
+    BST(int d)
+    {
+        data = d;
+        left = NULL;
+        right = NULL;
+    }
 };
 
 BST *root; // define a global root pointer
@@ -24,8 +31,7 @@ void BST::insert(BST *tree, int val)
 {
     if (root == NULL)
     {
-        root = new BST;
-        root->data = val;
+        root = new BST(val);
         return;
     }
 
@@ -39,22 +45,14 @@ void BST::insert(BST *tree, int val)
         if (tree->left != NULL)
             insert(tree->left, val);
         else
-        {
-            BST *newnode = new BST;
-            newnode->data = val;
-            tree->left = newnode;
-        }
+            tree->left = new BST(val);
     }
     else
     {
         if (tree->right != NULL)
             insert(tree->right, val);
         else
-        {
-            BST *newnode = new BST;
-            newnode->data = val;
-            tree->right = newnode;
-        }
+            tree->right = new BST(val);
     }
 }
 
