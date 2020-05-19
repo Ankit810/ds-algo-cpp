@@ -9,6 +9,7 @@ public:
     void insert(BST *, int);
     void preorder(BST *);
     void del(BST *&, int);
+
     // define a constructor to initialize left and right to NULL
     BST()
     {
@@ -106,9 +107,8 @@ void BST::del(BST *&root, int key)
             // Find the least value in the right subtree
             BST *temp = root->right;
             while (temp->left != NULL)
-            {
                 temp = temp->left;
-            }
+
             root->data = temp->data;
             del(root->right, temp->data);
         }
@@ -119,13 +119,33 @@ int main()
 {
     int ch, ele;
     BST b;
-    b.insert(root, 5);
-    b.insert(root, 10);
-    b.insert(root, 3);
-    b.insert(root, 4);
-    b.insert(root, 1);
-    b.insert(root, 11);
-    b.del(root, 5);
-    b.preorder(root);
-    cout << endl;
+    while (1)
+    {
+        cout << "\n1. Insert\n2. Display (preorder) \n3. Delete\n";
+        cin >> ch;
+
+        switch (ch)
+        {
+        case 1:
+            cout << "Enter the element to be inserted: ";
+            cin >> ele;
+            b.insert(root, ele);
+            break;
+        case 2:
+            cout << "\nPreorder traversal:\n";
+            b.preorder(root);
+            cout << "\n";
+            break;
+        case 3:
+            cout << "Enter the element to be deleted: ";
+            cin >> ele;
+            b.del(root, ele);
+            break;
+        case 4:
+            exit(0);
+            break;
+        default:
+            cout << "Please enter a valid choice\n";
+        }
+    }
 }
