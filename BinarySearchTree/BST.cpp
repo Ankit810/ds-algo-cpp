@@ -6,9 +6,9 @@ class BST
     int data;
 public:
     BST *left, *right;
-    void insert(BST *, int);
-    void deleteNode(BST *&, int);
-    void preorder(BST *);
+    void insert(BST *tree, int val);
+    void deleteNode(BST *&root, int key);
+    void preorder(BST *ptr);
 
     // define a constructor to initialize left and right to NULL
     BST()
