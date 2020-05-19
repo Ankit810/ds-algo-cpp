@@ -29,6 +29,8 @@ void BST::insert(BST *tree, int val)
         return;
     }
 
+    // Check if value to be inserted already exists, if it does, do nothing
+    // because BST cannot contain duplicate values
     if (val == tree->data)
         return;
 
@@ -60,6 +62,7 @@ void BST::preorder(BST *ptr)
 {
     if (root == NULL)
         return;
+
     if (ptr != NULL)
     {
         cout << ptr->data << "\t";
@@ -70,11 +73,10 @@ void BST::preorder(BST *ptr)
 
 void BST::del(BST *&root, int key)
 {
+    // Check if tree is empty
     if (root == NULL)
-    {
-        cout << "Tree is empty";
         return;
-    }
+
     // find the node to delete
     if (key < root->data)
         del(root->left, key);
@@ -88,7 +90,7 @@ void BST::del(BST *&root, int key)
             delete root;
             root = NULL;
         }
-        // Case 1: One contains one child
+        // Case 2: One contains one child
         else if (root->left == NULL)
         {
             BST *temp = root;
