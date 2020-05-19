@@ -7,8 +7,8 @@ class BST
 public:
     BST *left, *right;
     void insert(BST *, int);
+    void deleteNode(BST *&, int);
     void preorder(BST *);
-    void del(BST *&, int);
 
     // define a constructor to initialize left and right to NULL
     BST()
@@ -71,7 +71,7 @@ void BST::preorder(BST *ptr)
     }
 }
 
-void BST::del(BST *&root, int key)
+void BST::deleteNode(BST *&root, int key)
 {
     // Check if tree is empty
     if (root == NULL)
@@ -79,15 +79,15 @@ void BST::del(BST *&root, int key)
 
     // find the node to delete
     if (key < root->data)
-        del(root->left, key);
+        deleteNode(root->left, key);
     else if (key > root->data)
-        del(root->right, key);
+        deleteNode(root->right, key);
     else
     {
         // Case 1: No children, it is a leaf node
         if (root->left == NULL && root->right == NULL)
         {
-            delete root;
+            delete root; // free the memory referenced by this pointer
             root = NULL;
         }
         // Case 2: One contains one child
@@ -112,7 +112,7 @@ void BST::del(BST *&root, int key)
                 temp = temp->left;
 
             root->data = temp->data;
-            del(root->right, temp->data);
+            deleteNode(root->right, temp->data);
         }
     }
 }
@@ -141,7 +141,7 @@ int main()
         case 3:
             cout << "Enter the element to be deleted: ";
             cin >> ele;
-            b.del(root, ele);
+            b.deleteNode(root, ele);
             break;
         case 4:
             exit(0);
