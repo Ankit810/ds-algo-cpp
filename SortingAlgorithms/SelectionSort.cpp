@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+/* ------- Selection sort code begins here ------- */
 void selectionSort(int arr[], int len)
 {
     int min;
@@ -20,6 +21,7 @@ void selectionSort(int arr[], int len)
         arr[min] = temp;
     }
 }
+/* ------- Selection sort code ends here ------- */
 
 void printArray(int a[], int len)
 {
