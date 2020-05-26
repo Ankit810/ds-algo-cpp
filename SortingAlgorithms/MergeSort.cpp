@@ -3,6 +3,14 @@
 using namespace std;
 
 /* ------- Merge sort code begins here ------- */
+
+/*
+    Arguments:
+        array - array to be sorted
+        l - left index
+        m - mid index
+        r - right index
+*/
 void merge(int array[], int l, int m, int r)
 {
 
