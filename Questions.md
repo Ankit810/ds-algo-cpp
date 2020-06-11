@@ -35,6 +35,7 @@
 8. A source generates a message symbols with certain frequencies are given in the table:
 
    Symbols: `a f l o r t`
+
    Frequency: `7 8 5 3 9 4`
 
    Construct Huffman tree and encode the message “flat” using the above constructed Huffman tree.
@@ -61,8 +62,11 @@
     Display the BST created at this point using postorder and preorder traversal.
 
 12. Construct a Huffman tree for the input symbols and their frequencies are given in the table:  
+
     Symbols: `A B C D E F`
+
     Frequency: `5 7 20 5 20 45`
+
     Encode the following message using the Huffman tree: ADCFEEA
 
 13. Construct a binary tree for a given a inorder traversal:
@@ -82,7 +86,9 @@
     Note that each character in input message takes 1 byte.
 
     If the compression technique used is Huffman Coding, how many bits will be saved in the message?
+
     Character: `a b c d e f`
+
     Frequency: `5 9 12 13 16 45`
 
 17. The prototype of the member function of class BTREE is as follows:
