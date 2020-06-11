@@ -19,26 +19,26 @@ void insert(int arr[], int value)
     arr[size] = value;
     size++;
     int i = size - 1;
-    while(i != 0 && arr[parent(i)] > arr[i])
+    while(i != 0 && arr[parent(i)] < arr[i])
     {
         swap(arr[parent(i)], arr[i]);
         i = parent(i);
     }
 }
 
-void minHeapify(int arr[], int i)
+void maxHeapify(int arr[], int i)
 {
     int left = leftChild(i);
     int right = rightChild(i);
 
-    int smallest = i;
-    if (left < size && arr[left] < arr[smallest]) smallest = left;
-    if (right < size && arr[right] < arr[smallest]) smallest = right;
+    int largest = i;
+    if (left < size && arr[left] > arr[largest]) largest = left;
+    if (right < size && arr[right] > arr[largest]) largest = right;
 
-    if (smallest != i)
+    if (largest != i)
     {
-        swap(arr[smallest], arr[i]);
-        minHeapify(arr, smallest);
+        swap(arr[largest], arr[i]);
+        maxHeapify(arr, largest);
     }
 }
 
@@ -46,7 +46,7 @@ void deleteNode(int arr[], int idx)
 {
     arr[idx] = arr[size - 1];
     size--;
-    minHeapify(arr, idx);
+    maxHeapify(arr, idx);
 }
 
 void buildHeap(int arr[])
@@ -54,7 +54,7 @@ void buildHeap(int arr[])
     int start = (size/2) - 1;
     for(int i = start; i>=0; i--)
     {
-        minHeapify(arr, i);
+        maxHeapify(arr, i);
     }
 }
 
@@ -67,8 +67,7 @@ void printHeap(int arr[])
 
 int main()
 {
-    // min heap rep: { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
-    int arr[] = { 13, 3, 17, 5, 9, 4, 6, 1, 10, 8, 15 };
+    int arr[] = { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
     size = sizeof(arr) / sizeof(arr[0]); 
     buildHeap(arr);
     
