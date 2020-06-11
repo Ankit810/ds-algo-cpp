@@ -132,7 +132,6 @@ Node *buildHuffmanTree(char data[], int freq[], int s)
 
         insertNode(nodeArray, top);
     }
-
     return extractNode(nodeArray, 0);
 }
 
