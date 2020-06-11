@@ -67,7 +67,6 @@ void printHeap(int arr[])
 
 int main()
 {
-    // min heap rep: { 1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17 };
     int arr[] = { 13, 3, 17, 5, 9, 4, 6, 1, 10, 8, 15 };
     size = sizeof(arr) / sizeof(arr[0]); 
     buildHeap(arr);
