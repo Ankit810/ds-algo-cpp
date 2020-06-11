@@ -34,28 +34,16 @@ void swap(Node *&a, Node *&b)
     b = temp;
 }
 
-void insert(Node *nodeArray[], char data, int freq)
+void insert(Node *nodeArray[], Node *node)
 {
-    nodeArray[size] = new Node(data, freq);
     size++;
     int i = size - 1;
     while (i && nodeArray[parent(i)]->freq > nodeArray[i]->freq)
     {
-        swap(nodeArray[parent(i)], nodeArray[i]);
+        nodeArray[parent(i)] = nodeArray[i];
         i = parent(i);
     }
-}
-
-void insertNode(Node *nodeArray[], Node *node)
-{
-    nodeArray[size] = node;
-    size++;
-    int i = size - 1;
-    while (i && nodeArray[parent(i)]->freq > nodeArray[i]->freq)
-    {
-        swap(nodeArray[parent(i)], nodeArray[i]);
-        i = parent(i);
-    }
+    nodeArray[i] = node;
 }
 
 void minHeapify(Node *nodeArray[], int i)
@@ -116,7 +104,7 @@ void createMinHeap(char data[], int freq[])
     buildHeap(nodeArray);
 }
 
-Node *buildHuffmanTree(char data[], int freq[], int s)
+Node* buildHuffmanTree(char data[], int freq[], int s)
 {
     size = s;
     createMinHeap(data, freq);
@@ -130,23 +118,23 @@ Node *buildHuffmanTree(char data[], int freq[], int s)
         top->left = left;
         top->right = right;
 
-        insertNode(nodeArray, top);
+        insert(nodeArray, top);
     }
     return extractNode(nodeArray, 0);
 }
 
-void printCodes(Node *root, int arr[], int top)
+void printCodes(Node *root, int arr[], int pos)
 {
     if (root->left)
     {
-        arr[top] = 0;
-        printCodes(root->left, arr, top + 1);
+        arr[pos] = 0;
+        printCodes(root->left, arr, pos + 1);
     }
 
     if (root->right)
     {
-        arr[top] = 1;
-        printCodes(root->right, arr, top + 1);
+        arr[pos] = 1;
+        printCodes(root->right, arr, pos + 1);
     }
 
     if (isLeaf(root))
@@ -154,7 +142,7 @@ void printCodes(Node *root, int arr[], int top)
         cout << root->data << ": ";
 
         // print arr
-        for (int i = 0; i < top; i++)
+        for (int i = 0; i < pos; i++)
         {
             cout << arr[i];
         }

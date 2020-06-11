@@ -16,14 +16,14 @@ void swap(int &a, int &b)
 
 void insert(int arr[], int value)
 {
-    arr[size] = value;
     size++;
     int i = size - 1;
     while(i != 0 && arr[parent(i)] > arr[i])
     {
-        swap(arr[parent(i)], arr[i]);
+        arr[parent(i)] = arr[i];
         i = parent(i);
     }
+    arr[i] = value;
 }
 
 void minHeapify(int arr[], int i)
