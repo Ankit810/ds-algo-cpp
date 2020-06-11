@@ -1,5 +1,5 @@
 // Insertion sort
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 /* ------- Insertion sort code begins here ------- */
@@ -11,7 +11,7 @@ void insertionSort(int arr[], int len)
         int pos = i;
         while (pos > 0 && arr[pos - 1] > value)
         {
-            arr[pos] = arr[pos-1];
+            arr[pos] = arr[pos - 1];
             pos--;
         }
         arr[pos] = value;

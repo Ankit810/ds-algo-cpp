@@ -104,7 +104,7 @@ void createMinHeap(char data[], int freq[])
     buildHeap(nodeArray);
 }
 
-Node* buildHuffmanTree(char data[], int freq[], int s)
+Node *buildHuffmanTree(char data[], int freq[], int s)
 {
     size = s;
     createMinHeap(data, freq);

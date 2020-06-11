@@ -4,6 +4,7 @@ using namespace std;
 class BST
 {
     int data;
+
 public:
     BST *left, *right;
     void insert(BST *tree, int val);

@@ -1,5 +1,5 @@
 // quick sort
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void swap(int &, int &);
@@ -10,7 +10,8 @@ int partition(int array[], int start, int end)
     int pivot = array[end]; // assuming pivot element to always be rightmost element
     int pIndex = start;
 
-    for (int i = start; i < end; i++) {
+    for (int i = start; i < end; i++)
+    {
         if (array[i] <= pivot)
         {
             swap(array[i], array[pIndex]);
@@ -25,7 +26,8 @@ int partition(int array[], int start, int end)
 void quickSort(int arr[], int start, int end)
 {
     // base case
-    if (start >= end) return;
+    if (start >= end)
+        return;
 
     int pIndex = partition(arr, start, end);
     quickSort(arr, start, pIndex - 1);
@@ -55,7 +57,7 @@ int main()
     cout << "Before sorting\n";
     printArray(a, len);
 
-    quickSort(a, 0, len-1);
+    quickSort(a, 0, len - 1);
 
     cout << "After sorting\n";
     printArray(a, len);
