@@ -33,8 +33,10 @@
    Using the same convert the BST drawn by you into the threaded binary tree.
 
 8. A source generates a message symbols with certain frequencies are given in the table:
+
    Symbols: `a f l o r t`
    Frequency: `7 8 5 3 9 4`
+
    Construct Huffman tree and encode the message “flat” using the above constructed Huffman tree.
 
 9. Write a function for Quick Sort. Trace the function for the following input values:
