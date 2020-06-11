@@ -16,9 +16,16 @@
 4. Describe the Binary search algorithm and also implement the same using C++.
 
 5. Describe the following representation of graph data structure with example.
-   a. Adjacency Matrix b. Adjacency List
 
-6. Define the following w.r.t binary tree: Parent, Degree of Tree, Level of tree and Edge
+   - Adjacency Matrix
+   - Adjacency List
+
+6. Define the following with respect to binary tree:
+
+   - Parent
+   - Degree of tree
+   - Level of tree
+   - Edge
 
 7. Construct a Binary Search Tree (BST)for the input keys `200, 100, 300, 90, 150,400,250,120, 180`
    in the order for the initial empty tree.
