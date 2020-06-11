@@ -50,7 +50,7 @@ void createNewNode(Node *& root, int i, int j, int value)
         {
             temp = temp->next;
         }
-        if(temp) temp->next = new Node(i, j, value);
+        temp->next = new Node(i, j, value);
     }
 }
 
