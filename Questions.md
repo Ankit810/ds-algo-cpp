@@ -1,4 +1,4 @@
-# Second Sessional Questions of Data Structures and Algorithms
+# Second Sessional Questions for Data Structures and Algorithms
 
 ## Course offered by ECE Department, MIT Manipal
 
