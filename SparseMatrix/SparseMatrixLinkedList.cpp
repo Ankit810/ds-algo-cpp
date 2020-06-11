@@ -1,13 +1,12 @@
 // Sparse Matrix representation using Linked List
-#include<iostream>
+#include <iostream>
 using namespace std;
-
 
 class Node
 {
-    public:
-        int value, row, col;
-        Node *next;
+public:
+    int value, row, col;
+    Node *next;
     Node()
     {
         next = NULL;
@@ -20,25 +19,27 @@ class Node
     }
 };
 
-void printNode(Node* node)
+void printNode(Node *node)
 {
-    cout << "Row: " << node->row << "  " << "Col: " << node->col << "  " << "Value: " << node->value << "\t";
+    cout << "Row: " << node->row << "  "
+         << "Col: " << node->col << "  "
+         << "Value: " << node->value << "\t";
     cout << endl;
 }
 
 void printList(Node *root)
 {
     Node *temp = root;
-    while(temp != NULL)
+    while (temp != NULL)
     {
         printNode(temp);
-        temp = temp -> next;
+        temp = temp->next;
     }
 }
 
-void createNewNode(Node *& root, int i, int j, int value)
+void createNewNode(Node *&root, int i, int j, int value)
 {
-    Node* temp = root;
+    Node *temp = root;
 
     if (temp == NULL)
     {
@@ -46,7 +47,7 @@ void createNewNode(Node *& root, int i, int j, int value)
     }
     else
     {
-        while(temp->next != NULL)
+        while (temp->next != NULL)
         {
             temp = temp->next;
         }
@@ -60,15 +61,15 @@ int main()
 
     int m = 5;
     int n = 4;
-    int arr[][5] = { { 0, 1, 0, 0 }, 
-                    { 0, 0, 2, 0 }, 
-                    { 0, 3, 0, 0 }, 
-                    { 0, 0, 5, 0 }, 
-                    { 0, 0, 0, 4 } }; 
+    int arr[][5] = {{0, 1, 0, 0},
+                    {0, 0, 2, 0},
+                    {0, 3, 0, 0},
+                    {0, 0, 5, 0},
+                    {0, 0, 0, 4}};
     Node *temp;
     for (int i = 0; i < m; i++)
     {
-        for(int j=0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
             if (arr[i][j])
             {
