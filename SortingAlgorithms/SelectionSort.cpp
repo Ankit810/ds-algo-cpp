@@ -22,9 +22,12 @@ void selectionSort(int arr[], int len)
             if (arr[j] < arr[min])
                 min = j;
         }
-        
+
         // swap if minimum element is not current element itself
-        if (min != i) swap(arr[i], arr[min]);
+        if (min != i)
+        {
+            swap(arr[i], arr[min]);
+        }
     }
 }
 /* ------- Selection sort code ends here ------- */
