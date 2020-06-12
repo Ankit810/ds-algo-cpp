@@ -65,6 +65,7 @@ void merge(int array[], int l, int m, int r)
         k++;
     }
 }
+
 void mergeSort(int array[], int l, int r)
 {
     if (l < r)
